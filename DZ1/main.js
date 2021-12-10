@@ -9,18 +9,15 @@ const sxth = document.getElementById("string-1").innerText
 console.log(`${frst+"\n"+scnd+"\n"+thrd+"\n"+frth+"\n"+ffth+"\n"+sxth}`)
 console.log("======================================")
 //Second task
-console.log("===============Second task============")
 const obj = document.getElementsByClassName('element')
-console.log(obj.length)
 const red1= document.querySelector(`.red1`).style.color = `#ff0000`
 const red2= document.querySelector(`.red2`).style.color = `#ff0000`
 const red3= document.querySelector(`.red3`).style.color = `#ff0000`
 const green1 = document.querySelector(`.green1`).style.color = `#00ff00`
 const green2 = document.querySelector(`.green2`).style.color = `#00ff00`
 const green3 = document.querySelector(`.green3`).style.color = `#00ff00`
-console.log("======================================")
+
 // Third task
-console.log("================Third task============")
 const tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
 const todo = document.getElementById(`todo-list`)
 for (let i = 0; i<tasks.length; i++){
@@ -29,20 +26,26 @@ for (let i = 0; i<tasks.length; i++){
     li.className = "task"
     todo.append(li)
 }
-console.log("======================================")
+
 //Forth task
-console.log("================Forth task============")
 document.querySelectorAll('article>p').forEach((addHr) => {
     addHr.insertAdjacentHTML('afterend', '<hr/>');
 })
-console.log("======================================")
 //Fifth task
-console.log("================Fifth task============")
-const div = document.querySelectorAll(`.item`);
-for (let i = 0; i <div.length; i++){
-
-}
-console.log("======================================")
+const cola = document.getElementById(`cola`)
+cola.remove()
+const oldElem = document.getElementById(`chocolate`)
+const newElem = document.createElement(`div`)
+newElem.setAttribute('class', `item`)
+newElem.innerText = `Canned Fish x 4`
+const chokolateToFish = oldElem.parentNode
+chokolateToFish.replaceChild(newElem, oldElem)
 // //Sixth task
-// console.log("================Sixth task============")
-// console.log("======================================")
+const sixthEx = document.querySelector(`.sixth_task`)
+const ul = document.createElement('ul')
+ul.setAttribute(`class`,`list`)
+sixthEx.append(ul)
+
+const li = document.createElement(`li`)
+li.innerText = prompt(`Введите сообщение`);
+ul.appendChild(li)
