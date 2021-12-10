@@ -45,7 +45,12 @@ const sixthEx = document.querySelector(`.sixth_task`)
 const ul = document.createElement('ul')
 ul.setAttribute(`class`,`list`)
 sixthEx.append(ul)
-
-const li = document.createElement(`li`)
-li.innerText = prompt(`Введите сообщение`);
-ul.appendChild(li)
+while (true) {
+    const listTask = prompt("Введите задание");
+    if (listTask === null || listTask.length === 0){
+        break;
+    }
+    const li = document.createElement(`li`)
+    li.appendChild(document.createTextNode(listTask));
+    ul.appendChild(li)
+}
