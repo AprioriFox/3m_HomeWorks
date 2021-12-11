@@ -9,14 +9,14 @@ const sxth = document.getElementById("string-1").innerText
 console.log(`${frst+"\n"+scnd+"\n"+thrd+"\n"+frth+"\n"+ffth+"\n"+sxth}`)
 console.log("======================================")
 //Second task
-const obj = document.getElementsByClassName('element')
-const red1= document.querySelector(`.red1`).style.color = `#ff0000`
-const red2= document.querySelector(`.red2`).style.color = `#ff0000`
-const red3= document.querySelector(`.red3`).style.color = `#ff0000`
-const green1 = document.querySelector(`.green1`).style.color = `#00ff00`
-const green2 = document.querySelector(`.green2`).style.color = `#00ff00`
-const green3 = document.querySelector(`.green3`).style.color = `#00ff00`
-
+const elems = document.querySelectorAll('.element')
+for (let i = 0; i<elems.length; i++){
+    if (i<3) {
+        elems[i].style.color=`#ff0000`
+    }else{
+        elems[i].style.color = `#00ff00`
+    }
+}
 // Third task
 const tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
 const todo = document.getElementById(`todo-list`)
