@@ -20,7 +20,35 @@ const elem = () => {
     elem1.innerHTML = Math.floor(Math.random()*(max-min+1)+min);
     container2.appendChild(elem1);
 }
-const startSetTimeOut = () => {
-    setTimeout(elem,500)
+interval = setInterval(elem,5000)
+const startInterval = () => {
+        interval = setInterval(elem,5000)
 }
+const stopInterval = () => {
+    clearInterval(interval)
+}
+
+
 //Third task
+const minutes = document.getElementById(`minutes`)
+const seconds = document.getElementById(`seconds`)
+
+const timer = () => {
+    seconds.textContent = (+seconds.textContent + 1).toString().padStart(2, `0`);
+    if (+seconds.textContent === 60){
+        minutes.textContent = (+minutes.textContent + 1).toString().padStart(2, "0");
+        seconds.textContent = `00`
+    }
+}
+const startBtn = () => {
+    strtInt = setInterval(timer,1000)
+}
+const pauseBtn = () => {
+    clearInterval(strtInt)
+}
+const resetBtn = () => {
+    clearInterval(strtInt)
+    minutes.textContent = `00`
+    seconds.textContent = `00`
+}
+//Forth task

@@ -15,15 +15,23 @@
     <BR><BR><BR><BR><BR>
     <div class="second_task">
         <div id="container2"></div>
-        <a id="start" onclick="startSetTimeOut()">Start</a> |
-        <a id="stop">Stop</a>
+        <a id="start" onclick="startInterval()">Start</a> |
+        <a id="stop" onclick="stopInterval()">Stop</a>
     </div>
     <BR><BR><BR><BR><BR>
-    <div class="third_task"></div>
+    <div class="third_task">
+        <div>
+          <span id="minutes">00</span>:
+          <span id="seconds">00</span>
+        </div>
+        <button id="start_tt" onclick="startBtn()">Start</button>
+        <button id="pause" onclick="pauseBtn()">Pause</button>
+        <button id="reset" onclick="resetBtn()">Reset</button>
+
+    </div>
     <br><br><br><br><br>
     <div class="forth_task"></div>
     <br><br><br><br><br>
-    <div class="fifth_task"></div>
     </body>
     <script src="main.js"></script>
 </html>
