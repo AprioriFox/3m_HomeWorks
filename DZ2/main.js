@@ -52,3 +52,20 @@ const resetBtn = () => {
     seconds.textContent = `00`
 }
 //Forth task
+const user = document.forms[0];
+const logIn = user.lastElementChild;
+const minVal = 6;
+const check = () => {
+    if (user.username.value.length < minVal || user.password.value.length < minVal){
+        logIn.disabled = true;
+    }else{
+        logIn.disabled = false;
+    }
+}
+    const log = () => {
+        alert(`Username = ${user.username.value} \n Password = ${user.password.value}`)
+    }
+
+
+user.addEventListener(`change`, check)
+logIn.addEventListener(`click`, log)
