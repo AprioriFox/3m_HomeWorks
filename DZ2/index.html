@@ -5,39 +5,36 @@
         <title>Title</title>
     </head>
     <body>
-    <div class="first_task">
-        <div id="container">
+        <div class="first_task">
+            <input id="add-item-btn" type="button" value="Добавить" onclick="addElement()">
+            <div id="container"></div>
 
         </div>
-        <input id="add-item-btn" type="button" value="+" onclick="addElement()">
-
-    </div>
-    <BR><BR><BR><BR><BR>
-    <div class="second_task">
-        <div id="container2"></div>
-        <a id="start" onclick="startInterval()">Start</a> |
-        <a id="stop" onclick="stopInterval()">Stop</a>
-    </div>
-    <BR><BR><BR><BR><BR>
-    <div class="third_task">
-        <div>
-          <span id="minutes">00</span>:
-          <span id="seconds">00</span>
+        <BR><BR><BR><BR><BR>
+        <div class="second_task">
+            <button id="start" onclick="startInterval()">Start</button> |
+            <button id="stop" onclick="stopInterval()">Stop</button>
+            <div id="container2"></div>
         </div>
-        <button id="start_tt" onclick="startBtn()">Start</button>
-        <button id="pause" onclick="pauseBtn()">Pause</button>
-        <button id="reset" onclick="resetBtn()">Reset</button>
+        <BR><BR><BR><BR><BR>
+        <div class="third_task">
+            <div>
+              <span id="minutes">00</span>:
+              <span id="seconds">00</span>
+            </div>
+            <button id="start_tt" onclick="startBtn()">Start</button>
+            <button id="pause" onclick="pauseBtn()" disabled>Pause</button>
+            <button id="reset" onclick="resetBtn()" disabled>Reset</button>
 
-    </div>
-    <br><br><br><br><br>
-    <div class="forth_task">
+        </div>
+        <br><br><br><br><br>
+        <div class="forth_task">
         <form>
           <input type="text" name="username" />
           <input type="text" name="password"  />
           <input type="submit" value="Log in" disabled/>
         </form>
     </div>
-    <br><br><br><br><br>
     </body>
     <script src="main.js"></script>
 </html>
