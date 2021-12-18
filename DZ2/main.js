@@ -71,7 +71,8 @@ const check = () => {
         logIn.disabled = false;
     }
 }
-const log = () => {
+const log = (e) => {
+    e.preventDefault();
     alert(`Username = ${user.username.value} \n Password = ${user.password.value}`)
 }
 user.addEventListener(`change`, check)
