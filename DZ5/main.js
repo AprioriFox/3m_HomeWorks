@@ -1,5 +1,7 @@
 const searchBtn = document.getElementById('searchBtn')
 const inputField = document.getElementById('input')
+const modal = document.getElementById('modalDiv')
+let modalOpenBtn = document.getElementById('modalBtn')
 const smallWindow = document.getElementById('smallWindow')
 const searchCoctail = async () => {
     try {
@@ -12,7 +14,10 @@ const searchCoctail = async () => {
         const p = document.createElement('p')
             p.setAttribute('id', 'modalWin')
             p.innerText = data.drinks[i].strDrink;
-            p.style.cursor = 'pointer'//Название напитка
+            p.style.cursor = 'pointer'
+        const btnMore = document.createElement('button')
+            btnMore.textContent = 'View ditails'
+            btnMore.setAttribute('id', 'modalBtn')
         const span = document.createElement('span')
             span.className = 'img'
             span.style.backgroundImage = `url(${data.drinks[i].strDrinkThumb})`
@@ -22,16 +27,38 @@ const searchCoctail = async () => {
             divModal.className = 'modalDiv'
             divModal.setAttribute('id','modalDiv')//Модальное окно
         const innerModalDiv = document.createElement('div')
-            innerModalDiv.className = 'modal-content'
+            innerModalDiv.className = 'modal-content'//Модальное окно
         const modalHeader = document.createElement('div')
             modalHeader.className = 'modal-header'
+            const inModalHeadH = document.createElement('h3')
+                inModalHeadH.innerText = `${data.drinks[i].strDrink}\nIngridients`;
+            const inModalHeadSpan = document.createElement('span')
+                inModalHeadSpan.className = 'close'
+                inModalHeadSpan.textContent = 'X'
+                inModalHeadSpan.addEventListener('click',modalClose)
+        modalHeader.appendChild(inModalHeadH)
+        modalHeader.appendChild(inModalHeadSpan)//Модальный хэдэр
         const modalBody = document.createElement('div')
             modalBody.className = 'modal-body'
+            const inModalBodyContent = document.createElement('p')
+                inModalBodyContent.innerText = 'Тут будут ингридиенты!'
+            modalBody.appendChild(inModalBodyContent)//Модальное тело
         const modalFooter = document.createElement('div')
             modalFooter.className = 'modal-footer'
+                const inModalFooterH = document.createElement('h3')
+                    inModalFooterH.textContent = 'Instruction: '
+                const inModalFooterP = document.createElement('p')
+                    inModalFooterP.textContent = data.drinks[i].strInstructions;
+                modalFooter.appendChild(inModalFooterH)
+                modalFooter.appendChild(inModalFooterP)//Модальный футер, способ приготовления
+            innerModalDiv.appendChild(modalHeader)
+            innerModalDiv.appendChild(modalBody)
+            innerModalDiv.appendChild(modalFooter)
+        divModal.appendChild(innerModalDiv)
         divMain.append(span)
         divMain.appendChild(p)
-        // divMain.append(divModal)
+        divMain.append(btnMore)
+        divMain.append(divModal)
         smallWindow.append(divMain);
     }
     }
@@ -41,7 +68,14 @@ const searchCoctail = async () => {
 }
 searchBtn.addEventListener('click', searchCoctail)
 
-
-const modalOpen = () => {
-
+function modalOpen() {
+    modal.style.display = 'block'
+}
+function modalClose() {
+    modal.style.display = 'none'
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
