@@ -1,0 +1,21 @@
+#smallWindow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cont {
+    display: inline-block;
+    text-align: center;
+    margin: 15px auto;
+}
+.coctail {
+    margin: 15px;
+    text-align: center;
+    width: 210px;
+    border: 2px solid;
+}
+.img {
+    display: block;
+    width: 210px;
+    height: 300px;
+}
